@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+  <script>
+  name =["josh", "jean", "caitlin", "josh", "orion","bridget", "bridget", "link", "jean", "caitlin", "orion", "link"];
+function match(box) {
+counter = 0;
+	do 
+{switch(box)
+{
+	case 0:
+	if($("#" + box).hasClass("cover"))
+		{
+			$("#" + box).removeClass("cover");
+			$("#" + box).addClass("josh");
+		}
+		break;
+
+		case 1:
+	if($("#" + box).hasClass("cover"))
+		{
+			$("#" + box).removeClass("cover");
+			$("#" + box).addClass("jean");
+		}
+		break;
+
+		case 2:
+	if($("#" + box).hasClass("cover"))
+		{
+			$("#" + box).removeClass("cover");
+			$("#" + box).addClass("caitlin");
+		}
+		break;
+
+		case 3:
+	if($("#" + box).hasClass("cover"))
+		{
+			$("#" + box).removeClass("cover");
+			$("#" + box).addClass("josh");
+		}
+		break;
+
+		case 4:
+	if($("#" + box).hasClass("cover"))
+		{
+			$("#" + box).removeClass("cover");
+			$("#" + box).addClass("orion");
+		}
+		break;
+
+		case 5:
+	if($("#" + box).hasClass("cover"))
+		{
+			$("#" + box).removeClass("cover");
+			$("#" + box).addClass("bridget");
+		}
+		break;
+
+		case 6:
+	if($("#" + box).hasClass("cover"))
+		{
+			$("#" + box).removeClass("cover");
+			$("#" + box).addClass("bridget");
+		}
+		break;
+
+		case 7:
+	if($("#" + box).hasClass("cover"))
+		{
+			$("#" + box).removeClass("cover");
+			$("#" + box).addClass("link");
+		}
+		break;
+
+		case 8:
+	if($("#" + box).hasClass("cover"))
+		{
+			$("#" + box).removeClass("cover");
+			$("#" + box).addClass("jean");
+		}
+		break;
+
+		case 9:
+		if($("#" + box).hasClass("cover"))
+		{
+			$("#" + box).removeClass("cover");
+			$("#" + box).addClass("caitlin");
+		}
+		break;
+		
+		case 10:
+		if($("#" + box ).hasClass("cover"))
+		{
+			$("#" + box).removeClass("cover");
+			$("#" + box).addClass("orion");
+		}
+		break;
+
+		case 11:
+		if($("#" + box ).hasClass("cover"))
+		{
+			$("#" + box).removeClass("cover");
+			$("#" + box).addClass("link");
+		}
+		break;
+counter = counter + 1
+
+}
+while (counter != 2)
+
+function check(box)
+{
+for (i=0; i<12; i++)
+{if ($("#" + box).hasClass("name[i]") && $("#" + i).hasClass("name[i]"))
+	{
+		$("#" + box).removeClass("name[i]");
+		$("#" + i).removeClass("name[i]");
+		$("#" + box).addClass("transparent");
+		$("#" + i).addClass("transparent");
+	}
+
+	elseif ($("#" + box).hasClass(name[i]) && $("#" + i).hasClass("cover"))
+		{	counter = 1
+		}
+}
+
+
+
+  </script>
+
+
+  <style type="text/css">
+  *, *:after, *:before {
+            margin: 0;
+            padding:  0;
+            box-sizing: border-box;
+        }
+
+  .container
+  {width: 400px;
+  	height: 500px;
+  	margin: auto;
+  	/*position: relative;*/
+  }
+  .rowbox
+  {
+
+  }
+
+	.box
+  {
+  	width: 100px;
+  	height: 100px;
+  	display: inline-block;
+  	/*position:absolute;*/
+  }
+  .cover
+  {background-color: papayawhip;}
+
+  .transparent
+  {
+  	background-color: transparent;
+  }
+
+  .josh
+  {background: url("josh.png");
+  background-repeat: no-repeat;
+        	background-size: cover;
+        	 }
+
+  .caitlin
+{background: url("caitlin.png");
+ background-repeat: no-repeat;
+        	background-size: cover; }
+
+  .jean
+
+{background: url("jean.png");
+ background-repeat: no-repeat;
+        	background-size: cover; }
+  
+  .orion
+
+{background: url("orion.png");
+ background-repeat: no-repeat;
+        	background-size: cover; }
+  
+  .link
+
+{background: url("link.png"); 
+ background-repeat: no-repeat;
+        	background-size: cover;}
+
+  .bridget
+ 
+  {background: url("bridget.png");
+   background-repeat: no-repeat;
+        	background-size: cover; }
+
+
+
+
+
+  </style>
+  </head>
+  <body>
+  <section class="container">
+  <div id = "0" class = "box cover" onClick = "match(0)"></div>
+  <div id = "1" class = "box cover" onClick = "match(1)"></div>
+  <div id = "2" class = "box cover" onClick = "match(2)"></div>
+  <div id = "3" class = "box cover" onClick = "match(3)"></div>
+  <div id = "4" class = "box cover" onClick = "match(4)"></div>
+  <div id = "5" class = "box cover" onClick = "match(5)"></div>
+  <div id = "6" class = "box cover" onClick = "match(6)"></div>
+  <div id = "7" class = "box cover" onClick = "match(7)"></div>
+  <div id = "8" class = "box cover" onClick = "match(8)"></div>
+  <div id = "9" class = "box cover" onClick = "match(9)"></div>
+  <div id = "10" class = "box cover" onClick = "match(10)"></div>
+  <div id = "11" class = "box cover" onClick = "match(11)"></div>
+  </section>
+
+  </body>
+  </html>
