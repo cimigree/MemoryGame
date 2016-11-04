@@ -8,124 +8,16 @@
   <script>
   name =["josh", "jean", "caitlin", "josh", "orion","bridget", "bridget", "link", "jean", "caitlin", "orion", "link"];
   choicearray = [];
-function match(box) {
+function match(name) {
 
-switch(box)
-{
-	case 0:
-	if($("#" + box).hasClass("cover"))
-		{
-			$("#" + box).removeClass("cover");
-			$("#" + box).addClass("josh");
-			choice = "josh";
-		}
-		break;
-
-		case 1:
-	if($("#" + box).hasClass("cover"))
-		{
-			$("#" + box).removeClass("cover");
-			$("#" + box).addClass("jean");
-			choice = "jean";
-		}
-		break;
-
-		case 2:
-	if($("#" + box).hasClass("cover"))
-		{
-			$("#" + box).removeClass("cover");
-			$("#" + box).addClass("caitlin");
-			choice = "caitlin";
-		}
-		break;
-
-		case 3:
-	if($("#" + box).hasClass("cover"))
-		{
-			$("#" + box).removeClass("cover");
-			$("#" + box).addClass("josh");
-			choice = "josh";
-		}
-		break;
-
-		case 4:
-	if($("#" + box).hasClass("cover"))
-		{
-			$("#" + box).removeClass("cover");
-			$("#" + box).addClass("orion");
-			choice = "orion";
-		}
-		break;
-
-		case 5:
-	if($("#" + box).hasClass("cover"))
-		{
-			$("#" + box).removeClass("cover");
-			$("#" + box).addClass("bridget");
-			choice = "bridget";
-		}
-		break;
-
-		case 6:
-	if($("#" + box).hasClass("cover"))
-		{
-			$("#" + box).removeClass("cover");
-			$("#" + box).addClass("bridget");
-		}
-		choice = "bridget";
-		break;
-
-		case 7:
-	if($("#" + box).hasClass("cover"))
-		{
-			$("#" + box).removeClass("cover");
-			$("#" + box).addClass("link");
-			choice = "link";
-		}
-		break;
-
-		case 8:
-	if($("#" + box).hasClass("cover"))
-		{
-			$("#" + box).removeClass("cover");
-			$("#" + box).addClass("jean");
-			choice = "jean";
-		}
-		break;
-
-		case 9:
-		if($("#" + box).hasClass("cover"))
-		{
-			$("#" + box).removeClass("cover");
-			$("#" + box).addClass("caitlin");
-			choice = "caitlin";
-		}
-		break;
+			$(this).removeClass("cover");
+			$(this).addClass(name);
+			choice = (name);
 		
-		case 10:
-		if($("#" + box ).hasClass("cover"))
-		{
-			$("#" + box).removeClass("cover");
-			$("#" + box).addClass("orion");
-			choice = "orion";
-		}
-		break;
-
-		case 11:
-		if($("#" + box ).hasClass("cover"))
-		{
-			$("#" + box).removeClass("cover");
-			$("#" + box).addClass("link");
-			choice = "link";
-		}
-		break;
-}
-
-
 
 choicearray.push(choice);
 if (choicearray.length == 2)
-	{setTimeout(Change, 750);}
+	{setTimeout(Change, 600);}
 else
 	{Change();} 
 
@@ -280,20 +172,20 @@ text-shadow: rgb(255, 255, 255) 0px 0px 5px, rgb(255, 255, 255) 0px 0px 10px, rg
   </head>
   <body>
   <section class="container">
-  <div id = "0" class = "box cover" onClick = "match(0)"></div>
-  <div id = "1" class = "box cover" onClick = "match(1)"></div>
-  <div id = "2" class = "box cover" onClick = "match(2)"></div>
-  <div id = "3" class = "box cover" onClick = "match(3)"></div>
-  <div id = "4" class = "box cover" onClick = "match(4)"></div>
-  <div id = "5" class = "box cover" onClick = "match(5)"></div>
-  <div id = "6" class = "box cover" onClick = "match(6)"></div>
-  <div id = "7" class = "box cover" onClick = "match(7)"></div>
-  <div id = "8" class = "box cover" onClick = "match(8)"></div>
-  <div id = "9" class = "box cover" onClick = "match(9)"></div>
-  <div id = "10" class = "box cover" onClick = "match(10)"></div>
-  <div id = "11" class = "box cover" onClick = "match(11)"></div>
+  <div id = "0" name = "josh" class = "box cover" onClick = "match(this.name)"></div>
+  <div id = "1" name = "jean" class = "box cover" onClick = "match(this.name)"></div>
+  <div id = "2" name = "caitlin" class = "box cover" onClick = "match(this.name)"></div>
+  <div id = "3" name = "josh" class = "box cover" onClick = "match(this.name)"></div>
+  <div id = "4" name = "orion" class = "box cover" onClick = "match(this.name)"></div>
+  <div id = "5" name = "bridget" class = "box cover" onClick = "match(this.name)"></div>
+  <div id = "6" name = "bridget" class = "box cover" onClick = "match(this.name)"></div>
+  <div id = "7" name = "link" class = "box cover" onClick = "match(this.name)"></div>
+  <div id = "8" name = "jean" class = "box cover" onClick = "match(this.name)"></div>
+  <div id = "9" name = "caitlin" class = "box cover" onClick = "match(this.name)"></div>
+  <div id = "10" name = "orion" class = "box cover" onClick = "match(this.name)"></div>
+  <div id = "11" name = "link" class = "box cover" onClick = "match(this.name)"></div>
   </section>
   <h1 class = "reward"> </h1>
-
+  
   </body>
   </html>
