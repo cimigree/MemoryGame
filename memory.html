@@ -7,16 +7,17 @@
   crossorigin="anonymous"></script>
   <script>
   name =["josh", "jean", "caitlin", "josh", "orion","bridget", "bridget", "link", "jean", "caitlin", "orion", "link"];
+  choicearray = [];
 function match(box) {
-counter = 0;
-	do 
-{switch(box)
+
+switch(box)
 {
 	case 0:
 	if($("#" + box).hasClass("cover"))
 		{
 			$("#" + box).removeClass("cover");
 			$("#" + box).addClass("josh");
+			choice = "josh";
 		}
 		break;
 
@@ -25,6 +26,7 @@ counter = 0;
 		{
 			$("#" + box).removeClass("cover");
 			$("#" + box).addClass("jean");
+			choice = "jean";
 		}
 		break;
 
@@ -33,6 +35,7 @@ counter = 0;
 		{
 			$("#" + box).removeClass("cover");
 			$("#" + box).addClass("caitlin");
+			choice = "caitlin";
 		}
 		break;
 
@@ -41,6 +44,7 @@ counter = 0;
 		{
 			$("#" + box).removeClass("cover");
 			$("#" + box).addClass("josh");
+			choice = "josh";
 		}
 		break;
 
@@ -49,6 +53,7 @@ counter = 0;
 		{
 			$("#" + box).removeClass("cover");
 			$("#" + box).addClass("orion");
+			choice = "orion";
 		}
 		break;
 
@@ -57,6 +62,7 @@ counter = 0;
 		{
 			$("#" + box).removeClass("cover");
 			$("#" + box).addClass("bridget");
+			choice = "bridget";
 		}
 		break;
 
@@ -66,6 +72,7 @@ counter = 0;
 			$("#" + box).removeClass("cover");
 			$("#" + box).addClass("bridget");
 		}
+		choice = "bridget";
 		break;
 
 		case 7:
@@ -73,6 +80,7 @@ counter = 0;
 		{
 			$("#" + box).removeClass("cover");
 			$("#" + box).addClass("link");
+			choice = "link";
 		}
 		break;
 
@@ -81,6 +89,7 @@ counter = 0;
 		{
 			$("#" + box).removeClass("cover");
 			$("#" + box).addClass("jean");
+			choice = "jean";
 		}
 		break;
 
@@ -89,6 +98,7 @@ counter = 0;
 		{
 			$("#" + box).removeClass("cover");
 			$("#" + box).addClass("caitlin");
+			choice = "caitlin";
 		}
 		break;
 		
@@ -97,6 +107,7 @@ counter = 0;
 		{
 			$("#" + box).removeClass("cover");
 			$("#" + box).addClass("orion");
+			choice = "orion";
 		}
 		break;
 
@@ -105,28 +116,72 @@ counter = 0;
 		{
 			$("#" + box).removeClass("cover");
 			$("#" + box).addClass("link");
+			choice = "link";
 		}
 		break;
-counter = counter + 1
+}
+
+
+
+choicearray.push(choice);
+if (choicearray.length == 2)
+	{setTimeout(Change, 750);}
+else
+	{Change();} 
 
 }
-while (counter != 2)
+function Change()
 
-function check(box)
-{
-for (i=0; i<12; i++)
-{if ($("#" + box).hasClass("name[i]") && $("#" + i).hasClass("name[i]"))
+
+{if (choicearray.length == 2)
+
+	
+
+
+{ 
+if (choicearray[0] == choicearray[1])
+
 	{
-		$("#" + box).removeClass("name[i]");
-		$("#" + i).removeClass("name[i]");
-		$("#" + box).addClass("transparent");
-		$("#" + i).addClass("transparent");
+		$("." + choicearray[0]).removeClass(choicearray[0]).addClass("transparent");
+		choicearray=[];
+
+		if ($(".box").length == $(".transparent").length)
+
+	{
+
+		$('.reward').html('Congratulations! Here is your reward!');
+
+		$("body").css("background-image","url('fireworks.gif')");
+
 	}
 
-	elseif ($("#" + box).hasClass(name[i]) && $("#" + i).hasClass("cover"))
-		{	counter = 1
+	else
+		{
+			return;
 		}
+
+
 }
+		
+	
+	else
+	{
+		$("." + choicearray[0]).removeClass(choicearray[0]).addClass("cover");
+		$("." + choicearray[1]).removeClass(choicearray[1]).addClass("cover");
+		choicearray=[];
+
+
+	}
+
+
+}
+	
+	else 
+	{
+		return;
+	}
+
+	}
 
 
 
@@ -139,27 +194,43 @@ for (i=0; i<12; i++)
             padding:  0;
             box-sizing: border-box;
         }
+        .reward
+{
+color: rgb(255, 255, 255);
+font-size: 50px;
+background-color: rgb(0, 0, 0);
+text-shadow: rgb(255, 255, 255) 0px 0px 5px, rgb(255, 255, 255) 0px 0px 10px, rgb(255, 255, 255) 0px 0px 15px, rgb(255, 45, 149) 0px 0px 20px, rgb(255, 45, 149) 0px 0px 30px, rgb(255, 45, 149) 0px 0px 40px, rgb(255, 45, 149) 0px 0px 50px, rgb(255, 45, 149) 0px 0px 75px;
+}
+
+
+
+       
 
   .container
-  {width: 400px;
-  	height: 500px;
+  {width: 308px;
+  	height: 412px;
   	margin: auto;
-  	/*position: relative;*/
+  	 background: url("john.png");
+  background-repeat: no-repeat;
+        	background-size: cover;
+        	z-index: 0;
+  	
   }
-  .rowbox
-  {
 
-  }
+ 
 
 	.box
   {
   	width: 100px;
   	height: 100px;
   	display: inline-block;
-  	/*position:absolute;*/
   }
   .cover
-  {background-color: papayawhip;}
+  {background: url("academylogo.jpg");
+  background-repeat: no-repeat;
+        	background-size: cover;
+        	border: solid mediumblue 2px;
+        	 }
 
   .transparent
   {
@@ -222,6 +293,7 @@ for (i=0; i<12; i++)
   <div id = "10" class = "box cover" onClick = "match(10)"></div>
   <div id = "11" class = "box cover" onClick = "match(11)"></div>
   </section>
+  <h1 class = "reward"> </h1>
 
   </body>
   </html>
