@@ -5,35 +5,56 @@
   src="https://code.jquery.com/jquery-3.1.1.min.js"
   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
   crossorigin="anonymous"></script>
+
   <script>
-  // names =["josh", "jean", "caitlin", "josh", "orion","bridget", "bridget", "link", "jean", "caitlin", "orion", "link"];
   choicearray = [];
-function match(name) {
+  boxarray = [];
+  namearray = ["josh", "caitlin", "jean", "bridget", "orion", "link", "josh", "caitlin", "jean", "bridget", "orion", "link"];
+  console.log("namearray");
 
-
-			$(this).removeClass("cover");
-			$(this).addClass(name);
-			choice = (name);
-		
-
-choicearray.push(choice);
-if (choicearray.length == 2)
-	{setTimeout(Change, 600);}
-else
-	{Change();} 
-
+  function shuffleArray(array) {
+    console.log('shuffling array');
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    return array;
 }
-function Change()
+	shuffleArray(namearray);
 
 
-{if (choicearray.length == 2)
+	function match(box){
 
-	
+		$("#" + box).removeClass("cover");
+		$("#" + box).addClass(namearray[box]);
+		choice = namearray[box];
+		choicearray.push(choice);
+		boxarray.push(box);
+    console.log("Here is the person chosen: " + choice);
+    console.log("here is the choice array " + choicearray);
+    console.log("here is the box array which is supposed to contain a number that matches the square " + boxarray);
 
+		if (boxarray[0]=== boxarray[1])
+		{
+      console.log("popping last item in boxarray");
+			boxarray.pop();
+			choicearray.pop();
+		}
 
-{ 
-if (choicearray[0] == choicearray[1])
+		if (choicearray.length === 2)
+				{setTimeout(Change, 600);}
+			else
+				{Change();}
 
+				}
+
+			function Change() {
+        if (choicearray.length == 2)
+
+				{
+				if (choicearray[0] == choicearray[1])
 	{
 		$("." + choicearray[0]).removeClass(choicearray[0]).addClass("transparent");
 		choicearray=[];
@@ -45,7 +66,6 @@ if (choicearray[0] == choicearray[1])
 		$('.reward').html('Congratulations! Here is your reward!');
 
 		$("body").css("background-image","url('fireworks.gif')");
-
 	}
 
 	else
@@ -53,32 +73,25 @@ if (choicearray[0] == choicearray[1])
 			return;
 		}
 
-
 }
-		
-	
+
 	else
 	{
 		$("." + choicearray[0]).removeClass(choicearray[0]).addClass("cover");
 		$("." + choicearray[1]).removeClass(choicearray[1]).addClass("cover");
 		choicearray=[];
-
-
 	}
 
-
 }
-	
-	else 
+
+	else
 	{
 		return;
 	}
 
 	}
 
-
-
-  </script>
+</script>
 
 
   <style type="text/css">
@@ -93,11 +106,12 @@ color: rgb(255, 255, 255);
 font-size: 50px;
 background-color: rgb(0, 0, 0);
 text-shadow: rgb(255, 255, 255) 0px 0px 5px, rgb(255, 255, 255) 0px 0px 10px, rgb(255, 255, 255) 0px 0px 15px, rgb(255, 45, 149) 0px 0px 20px, rgb(255, 45, 149) 0px 0px 30px, rgb(255, 45, 149) 0px 0px 40px, rgb(255, 45, 149) 0px 0px 50px, rgb(255, 45, 149) 0px 0px 75px;
+text-align: center;
 }
 
 
 
-       
+
 
   .container
   {width: 308px;
@@ -107,10 +121,10 @@ text-shadow: rgb(255, 255, 255) 0px 0px 5px, rgb(255, 255, 255) 0px 0px 10px, rg
   background-repeat: no-repeat;
         	background-size: cover;
         	z-index: 0;
-  	
+
   }
 
- 
+
 
 	.box
   {
@@ -146,21 +160,21 @@ text-shadow: rgb(255, 255, 255) 0px 0px 5px, rgb(255, 255, 255) 0px 0px 10px, rg
 {background: url("jean.png");
  background-repeat: no-repeat;
         	background-size: cover; }
-  
+
   .orion
 
 {background: url("orion.png");
  background-repeat: no-repeat;
         	background-size: cover; }
-  
+
   .link
 
-{background: url("link.png"); 
+{background: url("link.png");
  background-repeat: no-repeat;
         	background-size: cover;}
 
   .bridget
- 
+
   {background: url("bridget.png");
    background-repeat: no-repeat;
         	background-size: cover; }
@@ -173,20 +187,20 @@ text-shadow: rgb(255, 255, 255) 0px 0px 5px, rgb(255, 255, 255) 0px 0px 10px, rg
   </head>
   <body>
   <section class="container">
-  <div id = "0" name = "josh" class = "box cover" onClick = "match(this.name)"></div>
-  <div id = "1" name = "jean" class = "box cover" onClick = "match(this.name)"></div>
-  <div id = "2" name = "caitlin" class = "box cover" onClick = "match(this.name)"></div>
-  <div id = "3" name = "josh" class = "box cover" onClick = "match(this.name)"></div>
-  <div id = "4" name = "orion" class = "box cover" onClick = "match(this.name)"></div>
-  <div id = "5" name = "bridget" class = "box cover" onClick = "match(this.name)"></div>
-  <div id = "6" name = "bridget" class = "box cover" onClick = "match(this.name)"></div>
-  <div id = "7" name = "link" class = "box cover" onClick = "match(this.name)"></div>
-  <div id = "8" name = "jean" class = "box cover" onClick = "match(this.name)"></div>
-  <div id = "9" name = "caitlin" class = "box cover" onClick = "match(this.name)"></div>
-  <div id = "10" name = "orion" class = "box cover" onClick = "match(this.name)"></div>
-  <div id = "11" name = "link" class = "box cover" onClick = "match(this.name)"></div>
+  <div id = "0" class = "box cover" onClick= "match(0)"></div>
+  <div id = "1" class = "box cover" onClick = "match(1)"></div>
+  <div id = "2"  class = "box cover" onClick = "match(2)"></div>
+  <div id = "3"  class = "box cover" onClick = "match(3)"></div>
+  <div id ="4"  class = "box cover" onClick = "match(4)"></div>
+  <div id= "5"  class = "box cover" onClick = "match(5)"></div>
+  <div id= "6"  class = "box cover" onClick = "match(6)"></div>
+  <div id = "7"  class = "box cover" onClick = "match(7)"></div>
+  <div id= "8"  class = "box cover" onClick = "match(8)"></div>
+  <div id= "9"  class = "box cover" onClick = "match(9)"></div>
+  <div id= "10" class = "box cover" onClick = "match(10)"></div>
+  <div id= "11" class = "box cover" onClick = "match(11)"></div>
   </section>
-  <h1 class = "reward"> </h1>
-  
+  <h1 class = "reward"> </h1
+
   </body>
   </html>
